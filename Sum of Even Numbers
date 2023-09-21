@@ -1,9 +1,9 @@
 fun main() {
-    // Prompt the user for input
+   
     println("Enter a positive integer n: ")
     val input = 4
     
-    // Check if the input is not null and is a positive integer
+   
     if (input != null) {
         try {
             val n = input.toInt()
@@ -11,7 +11,7 @@ fun main() {
                 var sum = 0
 
                 for (i in 2..n step 2) {
-                    // Add even numbers to the sum
+                   
                     sum += i
                 }
 
