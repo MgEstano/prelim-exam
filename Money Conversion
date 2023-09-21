@@ -1,0 +1,13 @@
+fun main() {
+    val amountInUSD = 100.0 
+    val exchangeRate = 50.50 
+
+    val convertedAmount = convertCurrency(amountInUSD, exchangeRate)
+    println("$amountInUSD USD is equal to $convertedAmount PESO")
+
+}
+fun convertCurrency(amount: Double, exchangeRate: Double): Double {
+    
+    val convertedAmount = amount * exchangeRate
+    return convertedAmount
+}
