@@ -1,0 +1,48 @@
+fun convertTemperature(
+    value: Double,
+    fromUnit: String,
+    toUnit: String
+): Double {
+    when {
+        fromUnit.equals("Fahrenheit", ignoreCase = true) && toUnit.equals("Celsius", ignoreCase = true) -> {
+            // Fahrenheit to Celsius conversion
+            return (value - 32) * 5 / 9
+        }
+        fromUnit.equals("Celsius", ignoreCase = true) && toUnit.equals("Fahrenheit", ignoreCase = true) -> {
+            // Celsius to Fahrenheit conversion
+            return (value * 9 / 5) + 32
+        }
+        fromUnit.equals("Celsius", ignoreCase = true) && toUnit.equals("Kelvin", ignoreCase = true) -> {
+            // Celsius to Kelvin conversion
+            return value + 273.15
+        }
+        fromUnit.equals("Kelvin", ignoreCase = true) && toUnit.equals("Celsius", ignoreCase = true) -> {
+            // Kelvin to Celsius conversion
+            return value - 273.15
+        }
+        fromUnit.equals("Fahrenheit", ignoreCase = true) && toUnit.equals("Kelvin", ignoreCase = true) -> {
+            // Fahrenheit to Kelvin conversion
+            return (value - 32) * 5 / 9 + 273.15
+        }
+        fromUnit.equals("Kelvin", ignoreCase = true) && toUnit.equals("Fahrenheit", ignoreCase = true) -> {
+            // Kelvin to Fahrenheit conversion
+            return (value - 273.15) * 9 / 5 + 32
+        }
+        fromUnit.equals(toUnit, ignoreCase = true) -> {
+           
+            return value
+        }
+        else -> {
+            throw IllegalArgumentException("Invalid temperature units")
+        }
+    }
+}
+
+fun main() {
+    val temperature = 100.0 
+    val fromUnit = "Celsius" 
+    val toUnit = "Fahrenheit" 
+
+    val convertedTemperature = convertTemperature(temperature, fromUnit, toUnit)
+    println("$temperature $fromUnit is $convertedTemperature $toUnit")
+}
