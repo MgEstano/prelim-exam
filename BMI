@@ -1,0 +1,13 @@
+fun main() {
+    val weight = 40.5 
+    val height = 67.7 
+
+    val bmi = calculateBMI(weight, height)
+    println("Your BMI is: $bmi")
+}
+fun calculateBMI(weight: Double, height: Double): Double {
+   
+    (height * height)
+    val bmi = weight / (height * height)
+    return bmi
+}
